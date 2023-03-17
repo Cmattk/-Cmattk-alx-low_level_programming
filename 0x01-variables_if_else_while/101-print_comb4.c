@@ -1,35 +1,32 @@
 #include <stdio.h>
-
 /**
- * main- Entry point
- * @void: Null value
- *
- * Description: Print numbers from 00 to 99
- * Return: Zero value
- */
-
+*main - Prints all combinations of three digits with,
+* and space followed by new line
+*
+*Return: returns 0
+*/
 int main(void)
 {
-	int i = 0;
-	int j;
-	int count = 0;
+	int digit1, digit2, digit3;
 
-	while (i <= 8)
+	for (digit1 = 0; digit1 < 9; digit1++)
 	{
-		j = i + 1;
-		while (j <= 9)
+		for (digit2 = digit1 + 1; digit2 < 9; digit2++)
 		{
-			putchar(i + '0');
-			putchar(j + '0');
-			if (count != 44)
+			for (digit3 = digit2 + 1; digit3 < 10; digit3++)
 			{
+
+				putchar((digit1 % 10) + '0');
+				putchar((digit2 % 10) + '0');
+				putchar((digit3 % 10) + '0');
+
+				if (digit1 == 7 && digit2 == 8 && digit3 == 9)
+					continue;
+
 				putchar(',');
 				putchar(' ');
 			}
-			j++;
-			count++;
 		}
-		i++;
 	}
 	putchar('\n');
 	return (0);

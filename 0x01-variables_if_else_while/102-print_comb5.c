@@ -1,43 +1,32 @@
 #include <stdio.h>
-
 /**
- * main- Entry point
- * @void: Null value
- *
- * Description: Print numbers from 00 to 99
- * Return: Zero value
- */
-
+*main - Prints all combinations of two two digits with,
+* and space followed by new line
+*
+*Return: returns 0
+*/
 int main(void)
 {
-	int i = 0;
-	int j, k;
-	int count = 0;
+	int digit1, digit2;
 
-	while (i <= 7)
+	for (digit1 = 0; digit1 <= 98; digit1++)
 	{
-		j = i + 1;
-		while (j <= 8)
+		for (digit2 = digit1 + 1; digit2 <= 99; digit2++)
 		{
-			k = j + 1;
-			while (k <= 9)
+			putchar((digit1 / 10) + '0');
+			putchar((digit1 % 10) + '0');
+			putchar(32);
+			putchar((digit2 / 10) + '0');
+			putchar((digit2 % 10) + '0');
+
+			if (digit1 / 10 != 9 || digit1 % 10 != 8)
 			{
-				putchar(i + '0');
-				putchar(j + '0');
-				putchar(k + '0');
-				if (count != 119)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-				k++;
-				count++;
+				putchar(44);
+				putchar(32);
 			}
-			j++;
 		}
-		i++;
 	}
-	putchar('\n');
+	putchar(10);
 	return (0);
 }
 
