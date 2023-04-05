@@ -1,11 +1,10 @@
-#include "main"
-
-void _Recursion(char *x)
+#include "main.h"
+void _puts_recursion(char *t)
 {
-	if (*x)
+	if (*t)
 	{
-		_putchar(*x);
-		_Recursion(x + 1);
+		_putchar(*t);
+		_puts_recursion(t + 1);
 	}
 
 	else
